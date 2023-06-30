@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 개요
 
-## Getting Started
+2023년 06월 29일 기준으로 내가 학습하고 경험했던 기술들을 사용하여 나를 소개하고, 블로깅 하는 홈페이지
 
-First, run the development server:
+# 사용 기술 스택
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1.  Base
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- NextJs ver 13
+- TypeScript
+- ESLint - airbnb
+- Prettier
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. UI & Animation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- MUI
+- TailwindCSS
+- styled-components (MUI 내장)
+- Framer
 
-## Learn More
+3. API 통신 및 캐싱
 
-To learn more about Next.js, take a look at the following resources:
+- axios
+- SWR
+- Iron Session
+- Session Storage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Form 및 Table
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- react-hook-form
+- MUI Table
 
-## Deploy on Vercel
+5. 상태 관리
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- recoil
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. 데이터 베이스 및 ORM
+
+- MySQL or PlanetScale
+- Prisma
+
+7. DevOps
+
+- GitHub
+- Teamcity (CI/CD)
+- AWS EC2 or Vercel
+- AWS RDS or PlanetScale
