@@ -45,3 +45,13 @@
 - Teamcity (CI/CD)
 - AWS EC2 or Vercel
 - AWS RDS or PlanetScale
+
+# 어떤 내용을 채울까?
+
+1. 대시보드
+2. 나의 이력서
+   1. 정보
+   2. 사상
+   3. 기술
+   4. 경력
+3. 포트폴리오
