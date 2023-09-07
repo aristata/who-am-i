@@ -22,24 +22,26 @@ const NavMenu = () => {
 
   return (
     <>
-      {/* 로고 */}
-      <Link href={"/"}>
-        {theme === "light" ? (
-          <div className="p-2">
-            <span className="font-english text-2xl">Aristata</span>
-          </div>
-        ) : (
-          <div className="p-2">
-            <span className="font-english text-2xl">Aristata</span>
-          </div>
-        )}
-      </Link>
-      {/* 네비 메뉴 */}
-      <Nav type="normal" theme={theme} />
-      {/* 테마 */}
-      <button onClick={handleTheme}>
-        <ThemeIcon theme={theme} />
-      </button>
+      <header className="flex ">
+        {/* 로고 */}
+        <Link href={"/"}>
+          {theme === "light" ? (
+            <div className="p-2">
+              <span className="font-english text-2xl">Aristata</span>
+            </div>
+          ) : (
+            <div className="p-2">
+              <span className="font-english text-2xl">Aristata</span>
+            </div>
+          )}
+        </Link>
+        {/* 네비 메뉴 */}
+        <Nav type="normal" theme={theme} />
+        {/* 테마 */}
+        <button onClick={handleTheme}>
+          <ThemeIcon theme={theme} />
+        </button>
+      </header>
     </>
   )
 }
