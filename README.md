@@ -56,13 +56,15 @@
    4. 경력
 3. 블로그
 
-# 예제 활용
+### 예제 활용
 
 ```
 yarn create next-app -e https://github.com/inyourcare/next-example/tree/main/my-blogify
 ```
 
-# Prisma 설치 및 기본 세팅
+---
+
+## Prisma 설치 및 기본 세팅
 
 ```
 yarn add prisma @prisma/client --save-dev
@@ -70,20 +72,36 @@ npx prisma init --datasource-provider sqlite
 npx prisma migrate dev --name init
 ```
 
-## 마이그레이션 명령어
+### 마이그레이션 명령어
 
 ```
 npx prisma migrate dev --name table_post_create
 ```
 
-## 클라이언트 오브잭트 동기화
+### 클라이언트 오브잭트 동기화
 
 ```
 npx prisma generate
 ```
 
-## 프리즈마 스튜디오
+### 프리즈마 스튜디오
 
 ```
 npx prisma studio
+```
+
+---
+
+# 프로젝트 설치
+
+```
+yarn
+```
+
+---
+
+# 프로젝트 실행
+
+```
+yarn dev
 ```
