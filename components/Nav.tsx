@@ -1,6 +1,7 @@
 import Link from "next/link"
 import navlinks from "../data/navlinks"
 import Stack from "@mui/material/Stack"
+import { Typography } from "@mui/material"
 
 interface NavProps {
   type: "toggle" | "normal"
@@ -32,7 +33,7 @@ const Nav = ({ type, onClick }: NavProps) => {
                     }
               }
             >
-              {nav.title}
+              <Typography fontFamily={"IAMAPLAYER"}>{nav.title}</Typography>
             </Link>
           ))}
         </Stack>
