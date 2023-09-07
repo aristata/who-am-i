@@ -1,13 +1,8 @@
 "use client"
 
-import Box from "@mui/material/Box"
-import Stack from "@mui/material/Stack"
-import Typography from "@mui/material/Typography"
-import { grey } from "@mui/material/colors"
 import Link from "next/link"
 import { useState } from "react"
 import Nav from "./Nav"
-import IconButton from "@mui/material/IconButton"
 import ThemeIcon from "./ThemeIcon"
 
 type Theme = "light" | "dark"
@@ -26,46 +21,26 @@ const NavMenu = () => {
   }
 
   return (
-    <Stack direction={"row"} alignItems={"center"} spacing={2}>
+    <>
       {/* 로고 */}
       <Link href={"/"}>
         {theme === "light" ? (
-          <Box
-            sx={{
-              textAlign: "center",
-              padding: 2,
-              border: "1px solid red"
-            }}
-          >
-            <Typography fontFamily={"IAMAPLAYER"} variant="h2">
-              Aristata
-            </Typography>
-          </Box>
+          <div className="p-2">
+            <span className="font-english text-2xl">Aristata</span>
+          </div>
         ) : (
-          <Box
-            sx={{
-              textAlign: "center",
-              padding: 2,
-              border: "1px solid red"
-            }}
-          >
-            <Typography
-              fontFamily={"IAMAPLAYER"}
-              variant="h2"
-              color={grey[100]}
-            >
-              Aristata
-            </Typography>
-          </Box>
+          <div className="p-2">
+            <span className="font-english text-2xl">Aristata</span>
+          </div>
         )}
       </Link>
       {/* 네비 메뉴 */}
-      <Nav type="normal" />
+      <Nav type="normal" theme={theme} />
       {/* 테마 */}
-      <IconButton>
+      <button onClick={handleTheme}>
         <ThemeIcon theme={theme} />
-      </IconButton>
-    </Stack>
+      </button>
+    </>
   )
 }
 
