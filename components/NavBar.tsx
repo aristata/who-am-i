@@ -2,12 +2,12 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import Nav from "./Nav"
+import NavLinks from "./NavLinks"
 import ThemeIcon from "./ThemeIcon"
 
 type Theme = "light" | "dark"
 
-const NavMenu = () => {
+const NavBar = () => {
   /*************************************************************************************************
    * 테마
    *************************************************************************************************/
@@ -22,21 +22,21 @@ const NavMenu = () => {
 
   return (
     <>
-      <header className="flex ">
+      <header className="flex justify-center items-baseline gap-10">
         {/* 로고 */}
         <Link href={"/"}>
           {theme === "light" ? (
             <div className="p-2">
-              <span className="font-english text-2xl">Aristata</span>
+              <span className="font-english text-4xl">Aristata</span>
             </div>
           ) : (
             <div className="p-2">
-              <span className="font-english text-2xl">Aristata</span>
+              <span className="font-english text-4xl">Aristata</span>
             </div>
           )}
         </Link>
         {/* 네비 메뉴 */}
-        <Nav type="normal" theme={theme} />
+        <NavLinks type="normal" theme={theme} />
         {/* 테마 */}
         <button onClick={handleTheme}>
           <ThemeIcon theme={theme} />
@@ -46,4 +46,4 @@ const NavMenu = () => {
   )
 }
 
-export default NavMenu
+export default NavBar

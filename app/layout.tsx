@@ -1,12 +1,7 @@
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-import NavMenu from "../components/NavMenu"
+import "../data/metadata"
 import "./globals.css"
-
-export const metadata = {
-  title: "Aristata's Library",
-  description: "Aristata's web application"
-}
+import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
 
 export default function RootLayout({
   children
@@ -15,10 +10,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Header />
-
       <body>
-        <NavMenu />
+        <NavBar />
         {children}
       </body>
 

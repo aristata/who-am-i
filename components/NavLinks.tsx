@@ -7,13 +7,13 @@ interface NavProps {
   theme: "light" | "dark"
 }
 
-const Nav = ({ type, onClick, theme }: NavProps) => {
+const NavLinks = ({ type, onClick, theme }: NavProps) => {
   const defaultStyle =
-    "dark:text-white dark:hover:text-green-500 text-center transition duration-250 hover:scale-125 hover:text-green-500 text-4xl"
+    "dark:text-white dark:hover:text-green-500 text-center transition duration-250 hover:scale-125 hover:text-green-500 text-2xl"
 
   return (
     <>
-      <nav>
+      <nav className="flex flex-row gap-4">
         {navlinks.map((nav) => (
           <Link
             href={nav.link}
@@ -37,4 +37,4 @@ const Nav = ({ type, onClick, theme }: NavProps) => {
   )
 }
 
-export default Nav
+export default NavLinks
