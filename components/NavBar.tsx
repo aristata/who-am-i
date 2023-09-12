@@ -2,8 +2,10 @@
 
 import { useTheme } from "next-themes"
 import Link from "next/link"
-import NavLinks from "./NavLinks"
 import ThemeIcon from "./ThemeIcon"
+import HomeSVG from "./svgs/Home"
+import IdentificationSVG from "./svgs/Identification"
+import InboxesSVG from "./svgs/Inboxes"
 
 const NavBar = () => {
   /*************************************************************************************************
@@ -16,26 +18,32 @@ const NavBar = () => {
   }
 
   return (
-    <header className="flex justify-center items-baseline gap-10">
-      {/* 로고 */}
-      <Link href={"/"}>
-        {theme === "light" ? (
-          <div className="p-2">
-            <span className="font-english text-4xl">Aristata</span>
+    <>
+      <header className="flex justify-center items-center gap-10">
+        {/* 로고 */}
+        <Link href={"/"}>
+          <div className="p-4">
+            <HomeSVG />
           </div>
-        ) : (
-          <div className="p-2">
-            <span className="font-english text-4xl">Aristata</span>
+        </Link>
+        {/* 네비 메뉴 */}
+        <Link href={"/profile"}>
+          <div className="p-4">
+            <IdentificationSVG />
           </div>
-        )}
-      </Link>
-      {/* 네비 메뉴 */}
-      <NavLinks type="normal" theme={theme} />
-      {/* 테마 */}
-      <button onClick={handleTheme}>
-        <ThemeIcon theme={theme} />
-      </button>
-    </header>
+        </Link>
+        <Link href={"/blog"}>
+          <div className="p-4">
+            <InboxesSVG />
+          </div>
+        </Link>
+
+        {/* 테마 */}
+        <button onClick={handleTheme}>
+          <ThemeIcon theme={theme} />
+        </button>
+      </header>
+    </>
   )
 }
 
