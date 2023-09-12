@@ -6,11 +6,7 @@ interface ThemeIconProps {
 }
 
 const ThemeIcon = ({ theme }: ThemeIconProps) => {
-  if (theme === "light") {
-    return <SunSVG />
-  }
-
-  return <MoonSVG />
+  return <>{theme && theme === "light" ? <MoonSVG /> : <SunSVG />}</>
 }
 
 export default ThemeIcon
