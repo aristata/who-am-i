@@ -2,7 +2,7 @@ import MoonSVG from "./svgs/Moon"
 import SunSVG from "./svgs/Sun"
 
 interface ThemeIconProps {
-  theme: "light" | "dark"
+  theme?: string
 }
 
 const ThemeIcon = ({ theme }: ThemeIconProps) => {

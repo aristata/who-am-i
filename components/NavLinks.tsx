@@ -4,7 +4,7 @@ import navlinks from "../data/navlinks"
 interface NavProps {
   type: "toggle" | "normal"
   onClick?: () => void
-  theme: "light" | "dark"
+  theme?: string
 }
 
 const NavLinks = ({ type, onClick, theme }: NavProps) => {
