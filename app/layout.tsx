@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import Container from "components/Container"
 import CustomThemeProvider from "@/components/CustomThemeProvider"
+import Analytics from "@/components/Analytics"
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <NavBar />
           <Container>{children}</Container>
+          <Analytics />
         </CustomThemeProvider>
       </body>
 
