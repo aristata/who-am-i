@@ -12,7 +12,7 @@ const Belief = () => {
   }
   return (
     <>
-      <div className="flex flex-row space-x-2 items-center">
+      <div className="flex flex-row space-x-2 items-center mb-2">
         {isOpen ? <span>📖</span> : <span>📙</span>}
         <h1
           className="text-4xl font-bold hover:cursor-pointer"
@@ -56,7 +56,7 @@ const Belief = () => {
               <li>이 일 하는것은 사람이고,</li>
               <li>이 서비스를 사용하는 것도 사람이다</li>
               <li>
-                사람 냄세 나게 개발하자
+                사람 냄새 나게 개발하자
                 <ul>
                   <li>적당히 타협할 줄도 알아야 하고</li>
                   <li>소신을 지킬줄도 알아야 하며</li>

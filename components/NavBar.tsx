@@ -19,7 +19,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="mx-auto max-w-3xl flex justify-center items-center gap-10 transition duration-500 bg-white text-neutral-800 dark:bg-neutral-900  dark:text-neutral-100">
+      <header className="mx-auto max-w-3xl flex justify-center items-center gap-10 transition duration-500 bg-white text-neutral-800 dark:bg-[#111111] dark:text-neutral-100">
         {/* 로고 */}
         <Link href={"/"}>
           <div className="p-4">
