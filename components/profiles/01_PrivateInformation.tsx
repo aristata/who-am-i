@@ -45,7 +45,7 @@ const PrivateInformation = () => {
             height={400}
             className="p-4"
           ></Image>
-          <ul className="list-disc px-2">
+          <ul className="list-disc px-6">
             <li>
               <span>고백컨데 이 사진은 뽀샵되었음</span>
             </li>

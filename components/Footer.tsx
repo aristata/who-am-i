@@ -5,7 +5,7 @@ import GithubSVG from "./svgs/Github"
 const Footer = () => {
   return (
     <>
-      <footer className="w-full font-mono flex flex-col justify-center items-center pt-10 pb-6 transition duration-500 bg-white dark:bg-[#111111] dark:text-white text-black">
+      <footer className="mx-auto max-w-3xl font-mono flex flex-col justify-center items-center pt-10 pb-6 transition duration-500 bg-white dark:bg-neutral-900 dark:text-white text-black">
         <div className="flex justify-center gap-4 items-center pt-4 border-t-2 w-36">
           <Link
             href="mailto:aristatait@gmail.com"
