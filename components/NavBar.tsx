@@ -32,7 +32,7 @@ const NavBar = () => {
             <IdentificationSVG />
           </div>
         </Link>
-        <Link href={"/blog"}>
+        <Link href={"/posts"}>
           <div className="p-4">
             <InboxesSVG />
           </div>
