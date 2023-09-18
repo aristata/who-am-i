@@ -1,5 +1,5 @@
-import PrivateInformation from "@/components/profiles/01_privateInformation"
-import Belief from "@/components/profiles/02_belief"
+import PrivateInformation from "@/components/profiles/01_private"
+import Belief from "@/components/profiles/02_values"
 import Career from "@/components/profiles/03_career"
 import Project from "@/components/profiles/04_project"
 import License from "@/components/profiles/05_license"
