@@ -14,7 +14,7 @@ const PrivateInformation = () => {
   return (
     <>
       <div className="flex flex-row space-x-2 items-center mb-2">
-        {isOpen ? <span>📖</span> : <span>📘</span>}
+        {isOpen ? <span>📖</span> : <span>📕</span>}
         <h1
           className="text-4xl font-bold hover:cursor-pointer"
           onClick={onClickHandler}
