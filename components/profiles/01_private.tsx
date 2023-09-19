@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useState } from "react"
+import { motion } from "framer-motion"
 
 const PrivateInformation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +14,7 @@ const PrivateInformation = () => {
   }
   return (
     <>
-      <div className="flex flex-row space-x-2 items-center mb-2">
+      <div className="flex flex-row space-x-2 items-center mb-2 ">
         {isOpen ? <span>📖</span> : <span>📕</span>}
         <h1
           className="text-4xl font-bold hover:cursor-pointer"
@@ -23,7 +24,10 @@ const PrivateInformation = () => {
         </h1>
       </div>
       {isOpen ? (
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1.5 } }}
+        >
           <div className="flex flex-row space-x-2">
             <span className="text-lg">이름:</span>
             <span className="text-lg">장성민</span>
@@ -59,7 +63,7 @@ const PrivateInformation = () => {
               <span>그래서 요즘 최대 관심사는 운동 🏃‍♂️</span>
             </li>
           </ul>
-        </div>
+        </motion.div>
       ) : null}
     </>
   )
