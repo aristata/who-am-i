@@ -34,7 +34,9 @@ const SampleLayout = ({ params }: { params: { slug: string } }) => {
         </time>
         <h1 className="text-3xl font-bold">{sample.title}</h1>
       </div>
-      <Content />
+      <div className="prose">
+        <Content />
+      </div>
     </article>
   )
 }
