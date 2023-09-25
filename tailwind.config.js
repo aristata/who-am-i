@@ -18,5 +18,5 @@ module.exports = {
       korean: ["omyu_pretty"]
     }
   },
-  plugins: []
+  plugins: [require("@tailwindcss/typography")]
 }

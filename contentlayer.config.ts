@@ -1,11 +1,37 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
-import highlight from "rehype-highlight"
 import rehypePrettyCode from "rehype-pretty-code"
+import readingTime from "reading-time"
+
+export const Sample = defineDocumentType(() => ({
+  name: "Sample",
+  contentType: "mdx",
+  filePathPattern: "samples/*.mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true
+    },
+    createdAt: {
+      type: "date",
+      required: true
+    }
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (sample) => `${sample._raw.flattenedPath}`
+    },
+    slug: {
+      type: "string",
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "")
+    }
+  }
+}))
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
   contentType: "mdx",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `posts/**/*.mdx`,
   fields: {
     title: {
       type: "string",
@@ -28,21 +54,35 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`
+      resolve: (post) => `${post._raw.flattenedPath}`
     },
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.sourceFileName.replace(".mdx", "")
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "")
+    },
+    readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
+    wordCount: {
+      type: "number",
+      resolve: (doc) => doc.body.raw.split(/\s+/gu).length
     }
   }
 }))
 
+const prettyCodeOptions = {
+  theme: "one-dark-pro",
+  defaultLang: {
+    block: "typescript",
+    inline: "plaintext"
+  },
+  showLineNumbers: true
+}
+
 const contentSource = makeSource({
-  contentDirPath: "posts", // 마크다운 파일이 저장되어 있는 루트 폴더
-  documentTypes: [Post],
+  contentDirPath: "datas", // 마크다운 파일이 저장되어 있는 루트 폴더
+  documentTypes: [Post, Sample],
   mdx: {
     remarkPlugins: [],
-    rehypePlugins: []
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]]
   }
 })
 
