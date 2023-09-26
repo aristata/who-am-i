@@ -1,3 +1,4 @@
+"use client"
 import MoonSVG from "./svgs/Moon"
 import SunSVG from "./svgs/Sun"
 

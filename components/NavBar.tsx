@@ -6,11 +6,19 @@ import ThemeIcon from "./ThemeIcon"
 import HomeSVG from "./svgs/Home"
 import IdentificationSVG from "./svgs/Identification"
 import InboxesSVG from "./svgs/Inboxes"
+import { useEffect, useState } from "react"
+import SunSVG from "./svgs/Sun"
 
 const NavBar = () => {
   /*************************************************************************************************
    * 테마
    *************************************************************************************************/
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const { theme, setTheme } = useTheme()
   const handleTheme = () => {
     const toggledTheme = theme === "dark" ? "light" : "dark"
@@ -39,9 +47,13 @@ const NavBar = () => {
         </Link>
 
         {/* 테마 */}
-        <button onClick={handleTheme}>
-          <ThemeIcon theme={theme} />
-        </button>
+        {!mounted ? (
+          <SunSVG />
+        ) : (
+          <button onClick={handleTheme}>
+            <ThemeIcon theme={theme} />
+          </button>
+        )}
       </header>
     </>
   )

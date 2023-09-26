@@ -25,15 +25,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <CustomThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
+          enableSystem={true}
         >
           <NavBar />
           <Container>{children}</Container>
           <Analytics />
         </CustomThemeProvider>
+        <Footer />
       </body>
-
-      <Footer />
     </html>
   )
 }
