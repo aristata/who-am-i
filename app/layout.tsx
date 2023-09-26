@@ -4,7 +4,6 @@ import "./globals.css"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import Container from "components/Container"
-import CustomThemeProvider from "@/components/CustomThemeProvider"
 import Analytics from "@/components/Analytics"
 import { Metadata } from "next"
 
@@ -22,15 +21,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <CustomThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem={true}
-        >
-          <NavBar />
-          <Container>{children}</Container>
-          <Analytics />
-        </CustomThemeProvider>
+        <NavBar />
+        <Container>{children}</Container>
+        <Analytics />
         <Footer />
       </body>
     </html>

@@ -1,28 +1,41 @@
 "use client"
 
-import { useTheme } from "next-themes"
 import Link from "next/link"
 import ThemeIcon from "./ThemeIcon"
 import HomeSVG from "./svgs/Home"
 import IdentificationSVG from "./svgs/Identification"
 import InboxesSVG from "./svgs/Inboxes"
 import { useEffect, useState } from "react"
-import SunSVG from "./svgs/Sun"
 
 const NavBar = () => {
   /*************************************************************************************************
    * 테마
    *************************************************************************************************/
-  const [mounted, setMounted] = useState(false)
-
+  const [theme, setTheme] = useState("light")
+  const setDarkTheme = () => {
+    document.documentElement.classList.add("dark")
+    localStorage.setItem("theme", "dark")
+    setTheme("dark")
+  }
+  const setLightTheme = () => {
+    document.documentElement.classList.remove("dark")
+    localStorage.setItem("theme", "light")
+    setTheme("light")
+  }
   useEffect(() => {
-    setMounted(true)
+    if (localStorage.getItem("theme") === "dark") {
+      setDarkTheme()
+    } else {
+      setLightTheme()
+    }
   }, [])
-
-  const { theme, setTheme } = useTheme()
   const handleTheme = () => {
-    const toggledTheme = theme === "dark" ? "light" : "dark"
-    setTheme(toggledTheme)
+    console.log("theme change function called")
+    if (theme === "dark") {
+      setLightTheme()
+    } else {
+      setDarkTheme()
+    }
   }
 
   return (
@@ -47,13 +60,9 @@ const NavBar = () => {
         </Link>
 
         {/* 테마 */}
-        {!mounted ? (
-          <SunSVG />
-        ) : (
-          <button onClick={handleTheme}>
-            <ThemeIcon theme={theme} />
-          </button>
-        )}
+        <button onClick={handleTheme}>
+          <ThemeIcon theme={theme} />
+        </button>
       </header>
     </>
   )
