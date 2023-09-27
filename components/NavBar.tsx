@@ -44,7 +44,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="sticky top-0 mx-auto max-w-3xl flex justify-center items-center gap-10 transition duration-500 bg-white text-neutral-800 dark:bg-[#111111] dark:text-neutral-100">
+      <header className="sticky top-0 mx-auto max-w-2xl flex justify-center items-center gap-x-20 mt-10">
         {/* 로고 */}
         <Link href={"/"}>
           <div className="p-4">
@@ -64,7 +64,7 @@ const NavBar = () => {
         </Link>
 
         {/* 테마 */}
-        <button onClick={handleTheme}>
+        <button onClick={handleTheme} className="p-4">
           <ThemeIcon theme={theme} />
         </button>
       </header>
