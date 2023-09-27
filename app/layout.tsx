@@ -19,8 +19,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body>
+    <html>
+      <body className="transition duration-500 bg-white text-neutral-800 dark:bg-[#111111]  dark:text-neutral-100">
         <NavBar />
         <Container>{children}</Container>
         <Analytics />

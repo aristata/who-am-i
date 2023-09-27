@@ -23,14 +23,18 @@ const NavBar = () => {
     setTheme("light")
   }
   useEffect(() => {
-    if (localStorage.getItem("theme") === "dark") {
+    const localTheme = localStorage.getItem("theme")
+    if (
+      localTheme === "dark" ||
+      (localTheme === null &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
       setDarkTheme()
     } else {
       setLightTheme()
     }
   }, [])
   const handleTheme = () => {
-    console.log("theme change function called")
     if (theme === "dark") {
       setLightTheme()
     } else {
