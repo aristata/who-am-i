@@ -7,7 +7,7 @@ const SampleCard = (sample: Sample) => {
     <div className="mb-8">
       <h2 className="mb-1 text-xl">
         <Link
-          href={sample.url}
+          href={sample.slug}
           className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
         >
           {sample.title}
@@ -15,7 +15,7 @@ const SampleCard = (sample: Sample) => {
       </h2>
       <time
         dateTime={sample.createdAt}
-        className="mb-2 block text-xs text-gray-600"
+        className="block mb-2 text-xs text-gray-600"
       >
         {format(parseISO(sample.createdAt), "yyyy 년 MM 월 dd 일")}
       </time>

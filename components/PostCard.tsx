@@ -7,7 +7,7 @@ const PostCard = (post: Post) => {
     <div className="mb-8">
       <h2 className="mb-1 text-xl">
         <Link
-          href={post.url}
+          href={post.slug}
           className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
         >
           {post.title}
@@ -15,7 +15,7 @@ const PostCard = (post: Post) => {
       </h2>
       <time
         dateTime={post.createdAt}
-        className="mb-2 block text-xs text-gray-600"
+        className="block mb-2 text-xs text-gray-600"
       >
         {format(parseISO(post.createdAt), "yyyy 년 MM 월 dd 일")}
       </time>

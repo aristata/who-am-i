@@ -1,6 +1,22 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import { ComputedFields, defineDocumentType, makeSource } from "contentlayer/source-files"
 import rehypePrettyCode from "rehype-pretty-code"
 import readingTime from "reading-time"
+
+const computedFields: ComputedFields = {
+  slug: {
+    type: "string",
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
+  slugAsParams: {
+    type: "string",
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+  },
+  readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
+  wordCount: {
+    type: "number",
+    resolve: (doc) => doc.body.raw.split(/\s+/gu).length
+  }
+}
 
 export const Sample = defineDocumentType(() => ({
   name: "Sample",
@@ -16,16 +32,7 @@ export const Sample = defineDocumentType(() => ({
       required: true
     }
   },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (sample) => `${sample._raw.flattenedPath}`
-    },
-    slug: {
-      type: "string",
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "")
-    }
-  }
+  computedFields
 }))
 
 export const Post = defineDocumentType(() => ({
@@ -41,6 +48,10 @@ export const Post = defineDocumentType(() => ({
       type: "date",
       required: true
     },
+    description: {
+      type: "string",
+      required: false
+    },
     tags: {
       type: "list",
       of: { type: "string" },
@@ -51,21 +62,7 @@ export const Post = defineDocumentType(() => ({
       required: false
     }
   },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (post) => `${post._raw.flattenedPath}`
-    },
-    slug: {
-      type: "string",
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "")
-    },
-    readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
-    wordCount: {
-      type: "number",
-      resolve: (doc) => doc.body.raw.split(/\s+/gu).length
-    }
-  }
+  computedFields
 }))
 
 const prettyCodeOptions = {

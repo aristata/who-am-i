@@ -26,6 +26,8 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
     "no-useless-catch": "off", // 불필요한 catch 못쓰게 하는 기능 끔
     "semi": "off",
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+    "prettier/prettier": ["warn", { "endOfLine": "auto" }],
+    "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/no-unused-expressions": "warn"
   }
 }
