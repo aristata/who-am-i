@@ -11,8 +11,17 @@ export default function Home() {
         <p>그래서 나누고 교감하고 서로 보듬으며 그렇게 살고자 합니다</p>
         <p>이 블로그를 통해 많은 것을 나눌 수 있으면 좋겠습니다</p>
       </div>
-      <div className="mt-4 flex ">
+      <div className="flex mt-4 ">
         <span className="text-xl">- 장성민, Aristata</span>
+      </div>
+      <hr className="h-1 m-4 bg-gray-200 border-0 dark:bg-gray-700" />
+      <div className="grid grid-cols-2 gap-4">
+        <div className="bg-green-300">
+          <h3>a</h3>
+        </div>
+        <div className="bg-green-300">
+          <h4>b</h4>
+        </div>
       </div>
     </>
   )

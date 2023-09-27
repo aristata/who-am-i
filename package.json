@@ -22,6 +22,8 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "eslint-config-next": "13.4.7",
+    "flowbite": "^1.8.1",
+    "flowbite-react": "^0.6.1",
     "framer-motion": "^10.16.4",
     "next": "^13.4.19",
     "next-contentlayer": "^0.3.4",
