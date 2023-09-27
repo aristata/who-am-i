@@ -1,4 +1,4 @@
-import SampleCard from "@/components/SampleCard"
+import SampleCard from "~/components/SampleCard"
 import PostCard from "components/PostCard"
 import { allPosts, allSamples } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
@@ -16,7 +16,7 @@ const PostListPage = () => {
   return (
     <>
       <div className="">
-        <h1 className="mb-8 text-center text-2xl font-black">
+        <h1 className="mb-8 text-2xl font-black text-center">
           Next.js + Contentlayer Example
         </h1>
         {posts.map((post) => (

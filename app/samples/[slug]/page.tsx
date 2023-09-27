@@ -1,38 +1,38 @@
 import { allSamples } from "contentlayer/generated"
-import { format, parse, parseISO } from "date-fns"
+import { format, parseISO } from "date-fns"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
 export const generateStaticParams = async () =>
   allSamples.map((sample) => ({ slug: sample._raw.flattenedPath }))
 
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-  const sample = allSamples.find(
+  const selectedSample = allSamples.find(
     (sample) => sample._raw.flattenedPath === `samples/${params.slug}`
   )
-  if (!sample)
+  if (!selectedSample)
     throw new Error(`sample not found for slug: samples/${params.slug}`)
-  return { title: sample.title }
+  return { title: selectedSample.title }
 }
 
 const SampleLayout = ({ params }: { params: { slug: string } }) => {
-  const sample = allSamples.find(
+  const selectedSample = allSamples.find(
     (sample) => sample._raw.flattenedPath === `samples/${params.slug}`
   )
-  if (!sample)
+  if (!selectedSample)
     throw new Error(`sample not found for slug: samples/${params.slug}`)
 
-  const Content = useMDXComponent(sample.body.code)
+  const Content = useMDXComponent(selectedSample.body.code)
 
   return (
-    <article className="mx-auto max-w-xl py-8">
+    <article className="max-w-xl py-8 mx-auto">
       <div className="mb-8 text-center">
         <time
-          dateTime={sample.createdAt}
+          dateTime={selectedSample.createdAt}
           className="mb-1 text-xs text-gray-600"
         >
-          {format(parseISO(sample.createdAt), "yyyy 년 MM 월 dd 일")}
+          {format(parseISO(selectedSample.createdAt), "yyyy 년 MM 월 dd 일")}
         </time>
-        <h1 className="text-3xl font-bold">{sample.title}</h1>
+        <h1 className="text-3xl font-bold">{selectedSample.title}</h1>
       </div>
       <div className="prose">
         <Content />

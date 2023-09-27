@@ -4,7 +4,7 @@ import "./globals.css"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import Container from "components/Container"
-import Analytics from "@/components/Analytics"
+import Analytics from "~/components/Analytics"
 import { Metadata } from "next"
 
 const metadata: Metadata = {
